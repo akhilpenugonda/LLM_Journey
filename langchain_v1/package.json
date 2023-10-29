@@ -1,0 +1,17 @@
+{
+  "name": "langchain_v1",
+  "version": "1.0.0",
+  "description": "Starting with langchain and chat gpt",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-ai/generativelanguage": "^0.2.1",
+    "langchain": "^0.0.175"
+  }
+}
