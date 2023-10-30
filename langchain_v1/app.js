@@ -50,8 +50,7 @@ const input = {
       threshold: 0.8,
     },
   ],
-  apiKey: 'AIzaSyDYTaObtIda0gQKytXUpWlDU0AsPSR4Gvo',
-  //'AIzaSyD3d3npOFWRAbYPaKP1Yk8KWhGyiHtumZM',
+  apiKey: 'abc',
 };
 
 // Create an instance of GooglePaLM
