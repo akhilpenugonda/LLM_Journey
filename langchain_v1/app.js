@@ -32,31 +32,21 @@
 
 import {GooglePaLM} from "langchain/llms/googlepalm"
 
+import dotenv from 'dotenv';
+dotenv.config();
 
 const input = {
   modelName: 'models/text-bison-001',
-  temperature: 0.1,
-  max_output_tokens: 1000,
-  topP: 0.9,
-  topK: 3,
-  stopSequences: ['.', '?', '!'],
-  safetySettings: [
-    {
-      category: 'IDENTITY',
-      threshold: 0.5,
-    },
-    {
-      category: 'PROFANITY',
-      threshold: 0.8,
-    },
-  ],
-  apiKey: 'abc',
+  temperature: 0.4,
+  maxOutputTokens: 5000,
+  // stopSequences: ['.', '?', '!'],
+  apiKey: process.env.PALM_API_KEY,
 };
 
 // Create an instance of GooglePaLM
 const llm = new GooglePaLM(input);
 
-let prompts = ['Write DFS Program for Binary Tree'] 
+let prompts = ['I want you to act as a poet.  My first request is "I need a poem about humans."'] 
 let llm_result = await llm._generate(prompts).then((result) => {
     console.log(result.generations[0][0].text);
     }
