@@ -19,7 +19,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.llms import OpenAI
-from langchain.llms.google_palm import GooglePalm
+# from langchain.llms.google_palm import GooglePalm
 from langchain.chains.question_answering import load_qa_chain
 from langchain.callbacks import get_openai_callback
 import os
@@ -87,8 +87,8 @@ def main():
         if query:
             docs = VectorStore.similarity_search(query=query, k=3)
 
-            # llm = OpenAI()
-            llm = GooglePalm(google_api_key=os.getenv("PALM_API_KEY"))
+            llm = OpenAI(temperature=0.0, model="davinci-002")
+            # llm = GooglePalm(google_api_key=os.getenv("PALM_API_KEY"))
             chain = load_qa_chain(llm=llm, chain_type="stuff")
             with get_openai_callback() as cb:
                 response = chain.run(input_documents=docs, question=query)
