@@ -3,3 +3,4 @@ StreamlitApps/.env
 Langchain Parsing Memory Chains/.env
 Langchain Splitting Vector Stores and Embeddings/.env
 Weaviate Implementation/.env
+chroma_db

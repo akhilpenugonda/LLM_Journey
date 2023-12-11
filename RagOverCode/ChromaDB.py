@@ -2,7 +2,7 @@ from langchain.document_loaders import DirectoryLoader
 from langchain.document_loaders.generic import GenericLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import SentenceTransformerEmbeddings
-from langchain.vectorstores import Chroma
+from langchain.vectorstores import chroma
 from langchain.chat_models import ChatOpenAI
 from langchain.chat_models import ChatGooglePalm
 from langchain.chains import RetrievalQA
@@ -33,7 +33,7 @@ docs = split_docs(documents)
 print(len(docs))
 
 embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
-db = Chroma.from_documents(docs, embeddings)
+db = chroma.from_documents(docs, embeddings)
 
 query = "What are the different types of concepts explained"
 matching_docs = db.similarity_search(query)

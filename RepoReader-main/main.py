@@ -17,6 +17,7 @@ def main():
     repo_name = github_url.split("/")[-1]
     print("Cloning the repository...")
     with tempfile.TemporaryDirectory() as local_path:
+        local_path = '/Users/akhilkumarp/development/personal/github/LLM_Journey/tempdata'
         if clone_github_repo(github_url, local_path):
             index, documents, file_type_counts, filenames = load_and_index_files(local_path)
             if index is None:
