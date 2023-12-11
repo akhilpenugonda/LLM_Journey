@@ -11,7 +11,7 @@ from gradio.themes.base import Base
 from langchain.document_loaders import TextLoader
 from langchain.document_loaders import PyPDFLoader
 
-client = MongoClient(host='mongodb+srv://CodeWithAI:FZSNgg7VJkh7FyMY@promptcolabdb.x5rov9n.mongodb.net/')
+client = MongoClient(host='mdburl')
 dbName = "langchain_demo"
 collectionName = "collection_of_text_blobs"
 collection = client[dbName][collectionName]
