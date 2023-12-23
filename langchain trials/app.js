@@ -8,6 +8,7 @@
 // let llm = GooglePalm()
 // llm.temperature = 0.1
 
+
 // prompts = ["The opposite of hot is",'The opposite of cold is'] 
 // let llm_result = llm._generate(prompts)
 
