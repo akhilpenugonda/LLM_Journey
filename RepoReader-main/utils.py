@@ -5,6 +5,8 @@ import os
 
 nltk.download("punkt")
 
+
+
 def clean_and_tokenize(text):
     text = re.sub(r'\s+', ' ', text)
     text = re.sub(r'<[^>]*>', '', text)
